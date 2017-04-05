@@ -1,0 +1,20 @@
+
+
+body {
+  background-color: tint(green, 50%);
+  color: $font-color;
+};
+
+p {
+  color: $font-color;
+};
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.center-block {
+  display: table;
+  margin: auto;
+}
