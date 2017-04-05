@@ -1,6 +1,8 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
+const gamesApi = require('./api.js')
+const gamesUi = require('./ui.js')
 
 const api = require('./api')
 const ui = require('./ui')
@@ -43,11 +45,34 @@ const onChangePassword = function (event) {
   .catch(ui.changePasswordFailure)
 }
 
+const onIndex = function (event) {
+  event.preventDefault()
+
+  api.index()
+    .then(ui.onSuccess)
+    .catch(ui.onError)
+}
+
+const onGetGame = function (event) {
+  event.preventDefault()
+  const game = getFormFields(event.target).game
+
+  if (game.id.length !== 0) {
+    gamesApi.show(game.id)
+      .then(gamesUi.onSuccess)
+      .catch(gamesUi.onError)
+  } else {
+    console.log('Please provide a book id!')
+  }
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#index').on('submit', onIndex)
+  $('#game-search').on('submit', onGetGame)
 }
 
 module.exports = {

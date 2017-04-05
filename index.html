@@ -16,6 +16,20 @@
     <h1>Tic Tac Toe</h1>
     <br><br>
 
+    <h2>Get Game</h2>
+    <form class='games' id='game-search'>
+      <div class="form-group">
+        <input type="text" name="game[id]" id="game-id" placeholder="Resource ID Here">
+      </div>
+      <button type="submit" class="btn btn-default">Get game</button>
+    </form>
+
+
+<!--from https://github.com/jonifallon/game-project-api-->
+
+<!--end https://github.com/jonifallon/game-project-api-->
+    <br><br>
+
     <table class="ticBoard">
       <tr>
         <!--add event listeners to each of these tiles to listen for when someone clicks on them
@@ -37,14 +51,7 @@
 
     </table>
 
-
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp; </div>
-<div class="row"> &nbsp;</div>
-<div class="row"> &nbsp;</div>
-<div class="row"> &nbsp;</div>
-
-
+   <div class="row">&nbsp;</div>
 
 <!--begin laying out buttons-->
 <table class="table-for-buttons">
@@ -52,6 +59,7 @@
 <td><button type="button" class="btn btn-success btn-lg">Start a New Game!</button>
 <p>needs logic</p></td>
 </tr>
+<tr><td><P>display scores</P></td></tr>
 </table>
 
 
@@ -80,10 +88,7 @@
   </td>
 </tr>
 </table>
-
-
 <!--end laying out buttons-->
-
 
   <!-- signin Modal -->
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
@@ -148,11 +153,7 @@
 </div>
 <!--end signup modal-->
 
-
-
 <br><br>
-
-
 
 <!-- change password Modal -->
 <div class="modal fade" id="changepwModal" tabindex="-1" role="dialog" aria-labelledby="changepwModalLabel" aria-hidden="true">
@@ -184,12 +185,7 @@
 </div>
 <!--end change password modal-->
 
-
-<br><br>
-
-
-
-<P>display scores</P>
+<br>
 
 <p>from the jquery-ajax-patch project</p>
   <h2>Get All Books</h2>

@@ -44,16 +44,19 @@ const changePassword = (data) => {
 
 // getting ready to add this kind of thing for the game using the code they gave us on
 // https://github.com/jonifallon/game-project-api
-// const index = function () {
-//   return $.ajax({
-//     url: app.host + '/books',
-//     method: 'GET'
-//   })
-// }
+
+const show = function (id) {
+  return $.ajax({
+    url: config.production + '/games/' + id,
+    method: 'GET'
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  show
+
 }
