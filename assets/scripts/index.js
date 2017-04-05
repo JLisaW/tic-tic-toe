@@ -41,3 +41,14 @@ $(() => {
     $('#signupModal').modal('hide')
   })
 })
+
+// changepw
+$(() => {
+  setAPIOrigin(location, config)
+  $('form').on('submit', function (event) {
+    event.preventDefault()
+    const input = $('#emailInput').val()
+    console.log(input)
+    $('#changepwModal').modal('hide')
+  })
+})
