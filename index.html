@@ -16,32 +16,27 @@
     <h1>Tic Tac Toe</h1>
     <br><br>
 
+    <table class="ticBoard">
+      <tr>
+        <!--add event listeners to each of these tiles to listen for when someone clicks on them
+             then place an x or o based on who clicked-->
+      <td class="tile"><div class="panel" id="one">panel 1</div></td>
+      <td class="tile"><div class="panel" id="two">panel 2</div></td>
+      <td class="tile"><div class="panel" id="three">panel 3</div></td>
+      </tr>
+      <tr>
+      <td class="tile"><div class="panel" id="four">panel 4</div></td>
+      <td class="tile"><div class="panel" id="five">panel 5</div></td>
+      <td class="tile"><div class="panel" id="six">panel 6</div></td>
+      </tr>
+      <tr>
+      <td class="tile"><div class="panel" id="seven">panel 7</div></td>
+      <td class="tile"><div class="panel" id="eight">panel 8</div></td>
+      <td class="tile"><div class="panel" id="nine">panel 9</div></td>
+      </tr>
 
-        <!--Begin Game Board-->
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-2 box cell">1</div>
-            <div class="col-xs-2 box cell">2</div>
-            <div class="col-xs-2 box cell">3</div>
-            <div class="col-xs-3"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-2 box cell">4</div>
-            <div class="col-xs-2 box cell">5</div>
-            <div class="col-xs-2 box cell">6</div>
-            <div class="col-xs-3"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-2 box cell">7</div>
-            <div class="col-xs-2 box cell">8</div>
-            <div class="col-xs-2 box cell">9</div>
-            <div class="col-xs-3"></div>
-          </div>
+    </table>
 
-<!-- end game board-->
 
 <div class="row">&nbsp;</div>
 <div class="row">&nbsp; </div>
@@ -49,9 +44,47 @@
 <div class="row"> &nbsp;</div>
 <div class="row"> &nbsp;</div>
 
-    <!-- Button for signin modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">
-  Sign in</button>
+
+
+<!--begin laying out buttons-->
+<table class="table-for-buttons">
+<tr>
+<td><button type="button" class="btn btn-success btn-lg">Start a New Game!</button>
+<p>needs logic</p></td>
+</tr>
+</table>
+
+
+<table class="table-for-buttons">
+<tr>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">
+    Sign in</button>
+  </td>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
+  Sign Up</button>
+  </td>
+</tr>
+</table>
+
+<table class="table-for-buttons">
+<tr>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changepwModal">
+  Change Password</button>
+  </td>
+  <td class="table-cells-for-buttons"><form id="sign-out">
+    <fieldset>
+      <input type="submit" name="submit" value="Sign out!">
+    </fieldset>
+  </form>
+  <button type="button" class="btn btn-primary">Sign Out</button>
+  </td>
+</tr>
+</table>
+
+
+<!--end laying out buttons-->
+
+
   <!-- signin Modal -->
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -82,11 +115,8 @@
   </div>
   <!--end signin modal-->
 
+<br><br>
 
-
-  <!-- Button for signjup modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
-Sign Up</button>
 <!-- signup Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -120,11 +150,46 @@ Sign Up</button>
 
 
 
-  <P>change password</P>
-  <P>sign out</P>
-  <P>start game</P>
-  <P>sign out</P>
-  <P>display scores</P>
+<br><br>
+
+
+
+<!-- change password Modal -->
+<div class="modal fade" id="changepwModal" tabindex="-1" role="dialog" aria-labelledby="changepwModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="changepwModalLabel">Welcome!<br>  Please change your password below!</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+<!--begin change password form-->
+<form id="change-password">
+  <fieldset>
+    <legend></legend>
+      <input type="password" name="passwords[old]" id="old password" placeholder="old password">
+      <input type="password" name="passwords[new]" id="new password" placeholder="new password">
+    <input type="submit" name="submit" value="Change password!">
+  </fieldset>
+</form>
+    <!--end change password form-->
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end change password modal-->
+
+
+<br><br>
+
+
+
+<P>display scores</P>
 
 <p>from the jquery-ajax-patch project</p>
   <h2>Get All Books</h2>
