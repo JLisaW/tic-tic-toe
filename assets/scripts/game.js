@@ -16,39 +16,39 @@ const makeMove = function (array, tile, player) {
 let tile
 document.getElementById('one').addEventListener('click', function () {
   game[0] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('two').addEventListener('click', function () {
   game[1] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('three').addEventListener('click', function () {
   game[2] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('four').addEventListener('click', function () {
   game[3] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('five').addEventListener('click', function () {
   game[4] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('six').addEventListener('click', function () {
   game[5] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('seven').addEventListener('click', function () {
   game[6] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('eight').addEventListener('click', function () {
   game[7] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 document.getElementById('nine').addEventListener('click', function () {
   game[8] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game); winningCombo();
+  makeMove(game, tile, currentPlayer); console.log(game);
 })
 
 // makeMove(game, tile, currentPlayer)
@@ -68,50 +68,63 @@ const winningCombo = function (array) {
   if ((game[0] === game[1]) && (game[1] === game[2]) && (game[2] !== '')) {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // [345
   else if ((game[3] === game[4]) && (game[4] === game[5]) && (game[5] !== ''))
   {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // 678,
   else if ((game[6] === game[7]) && (game[7] === game[8]) && (game[8] !== ''))
   {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // 036
   else if ((game[0] === game[3]) && (game[3] === game[6]) && (game[6] !== ''))
   {
     winningPlayer = game[1]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // [147
   else if ((game[1] === game[4]) && (game[4] === game[7]) && (game[7] !== ''))
   {
     winningPlayer = game[2]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // [258
   else if ((game[2] === game[5]) && (game[5] === game[8]) && (game[8] !== ''))
   {
     winningPlayer = game[2]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // [048
   else if ((game[0] === game[4]) && (game[4] === game[8]) && (game[8] !== ''))
   {
     winningPlayer = game[3]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
   // 642
   else if ((game[6] === game[4]) && (game[4] === game[2]) && (game[2] !== ''))
   {
     winningPlayer = game[5]
     console.log('Player ' + winningPlayer + ' wins!')
+
   }
+  winningCombo(game)
+  console.log(winningCombo)
 }
+
+
+
 // winningCombo(game)
 // console.log(winningCombo)
 // console.log(game)
