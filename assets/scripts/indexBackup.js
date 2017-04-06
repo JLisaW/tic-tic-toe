@@ -80,7 +80,7 @@ document.getElementById('nine').addEventListener('click', function () { this.til
 function isGameOver () {
   // for (let i = 0; i < tiles.length; i++) {
   // const i = 0
-  if (tilesSelected[0] === tilesSelected[1] && tilesSelected[0] === tilesSelected[2] && tilesSelected[0] !== 0) {
+  if ((tilesSelected[0] === tilesSelected[1]) && (tilesSelected[0] === tilesSelected[2]) && (tilesSelected[0] !== 0)) {
     console.log('Blocks 1, 2 and 3 win')
         // _win = 1
     // return
