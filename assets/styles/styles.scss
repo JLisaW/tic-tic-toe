@@ -1,8 +1,8 @@
 
 
 body {
-  //background-color: tint(green, 50%);
-  color: $font-color;
+  background-image: url('/assets/images/tiedye.jpg');
+  background-size: stretch;
 };
 
 p {
@@ -12,6 +12,14 @@ p {
 h1 {
   margin: 0 auto;
   text-align: center;
+  color: #fff;
+  background-color: #001d61;
+  padding: 30px;
+  width: 300px;
+}
+
+td {
+  vertical-align: top;
 }
 
 .center {
@@ -33,82 +41,24 @@ h1 {
   padding: 10px 30px;
 }
 
-
+// .tile {
+//   vertical-align: middle;
+// }
+//
 .panel {
   width: 100px;
   height: 100px;
-  border-radius: 5px;
-
-
-}
-
-#one {
-  background-color: white;
-  margin: auto;
-  float:left;
-
-}
-
-#two {
-  background-color: white;
+//   //border-radius: 5px;
+  font-size: 75px;
+  text-align: center;
   margin: auto;
   float: left;
-
+  border-color: #000;
 }
-
-#three {
-  background-color: white;
-  margin: auto;
-  float: left;
-
-}
-
-#four {
-  background-color: white;
-  margin: auto;
-  clear: both;
-  float:left;
-}
-
-#five {
-  background-color: white;
-  margin: auto;
-  float: left;
-}
-
-#six {
-  background-color: white;
-  margin: auto;
-  float: left;
-}
-
-#seven {
-  background-color: white;
-  margin: auto;
-  clear: both;
-  float: left;
-}
-
-#eight {
-  background-color: white;
-  margin: auto;
-  float: left;
-}
-
-#nine {
-  background-color: white;
-  margin: auto;
-  float: left;
-}
-
-.tile {
-  height: auto;
-  width: auto;
-}
-
+//
 .ticBoard {
   width: auto;
   margin-left: auto;
   margin-right: auto;
-  background-color: pink;
+  // background-color: pink;
 }

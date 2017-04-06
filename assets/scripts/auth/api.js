@@ -3,6 +3,13 @@
 const config = require('../config')
 const store = require('../store')
 
+const index = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET'
+  })
+}
+
 const signUp = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -52,11 +59,30 @@ const show = function (id) {
   })
 }
 
+const add = function (data) {
+  return $.ajax({
+    url: config.production + '/games',
+    method: 'POST',
+    data: data
+  })
+}
+
+const update = function (id) {
+  return $.ajax({
+    url: config.production + '/games/' + id,
+    method: 'PATCH'
+    // data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  show
+  show,
+  index,
+  add,
+  update
 
 }

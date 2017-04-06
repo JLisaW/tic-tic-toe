@@ -13,16 +13,9 @@
     </head>
     <body class="container-fluid">
 
-    <h1>Tic Tac Toe</h1>
-    <br><br>
 
-    <h2>Get Game</h2>
-    <form class='games' id='game-search'>
-      <div class="form-group">
-        <input type="text" name="game[id]" id="game-id" placeholder="Resource ID Here">
-      </div>
-      <button type="submit" class="btn btn-default">Get game</button>
-    </form>
+    <h1>Tic Tac Toe</h1>
+
 
 
 <!--from https://github.com/jonifallon/game-project-api-->
@@ -34,19 +27,19 @@
       <tr>
         <!--add event listeners to each of these tiles to listen for when someone clicks on them
              then place an x or o based on who clicked-->
-      <td class="tile"><div class="panel" id="one">panel 1</div></td>
-      <td class="tile"><div class="panel" id="two">panel 2</div></td>
-      <td class="tile"><div class="panel" id="three">panel 3</div></td>
+      <td class="tile"><div class="panel" id="one"> </div></td>
+      <td class="tile"><div class="panel" id="two"> </div></td>
+      <td class="tile"><div class="panel" id="three"> </div></td>
       </tr>
       <tr>
-      <td class="tile"><div class="panel" id="four">panel 4</div></td>
-      <td class="tile"><div class="panel" id="five">panel 5</div></td>
-      <td class="tile"><div class="panel" id="six">panel 6</div></td>
+      <td class="tile"><div class="panel" id="four"> </div></td>
+      <td class="tile"><div class="panel" id="five"> </div></td>
+      <td class="tile"><div class="panel" id="six"> </div></td>
       </tr>
       <tr>
-      <td class="tile"><div class="panel" id="seven">panel 7</div></td>
-      <td class="tile"><div class="panel" id="eight">panel 8</div></td>
-      <td class="tile"><div class="panel" id="nine">panel 9</div></td>
+      <td class="tile"><div class="panel" id="seven"> </div></td>
+      <td class="tile"><div class="panel" id="eight"> </div></td>
+      <td class="tile"><div class="panel" id="nine"> </div></td>
       </tr>
 
     </table>
@@ -65,10 +58,10 @@
 
 <table class="table-for-buttons">
 <tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signinModal">
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#signinModal">
     Sign in</button>
   </td>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#signupModal">
   Sign Up</button>
   </td>
 </tr>
@@ -76,7 +69,7 @@
 
 <table class="table-for-buttons">
 <tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changepwModal">
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#changepwModal">
   Change Password</button>
   </td>
   <td class="table-cells-for-buttons"><form id="sign-out">
@@ -84,7 +77,7 @@
       <input type="submit" name="submit" value="Sign out!">
     </fieldset>
   </form>
-  <button type="button" class="btn btn-primary">Sign Out</button>
+  <button type="button" class="btn btn-default">Sign Out</button>
   </td>
 </tr>
 </table>
@@ -185,15 +178,48 @@
 </div>
 <!--end change password modal-->
 
+<hr>
+<form class='games' id='game-search'>
+  <div class="form-group">
+    <input type="text" name="game[id]" id="game-id" placeholder="Game ID Here">
+  </div>
+  <button type="submit" class="btn btn-default">Get game</button>
+</form>
+
+<hr>
+
+<form class='games' id='game-update'>
+  <div class="form-group">
+    <input type="text" name="game[id]" id="game-id-update" placeholder="Resource ID Here">
+    <input type="text" name="game[title]" id="game-title-update" placeholder="Resource Title Here">
+    <input type="text" name="game[author]" id="game-author-update" placeholder="Resource Author Here">
+  </div>
+  <button type="submit" class="btn btn-default">Update Game</button>
+</form>
+
+<hr>
+
+<form class='games' id='games-search'>
+<div class="form-group">
+</div>
+<button type="submit" class="btn btn-default">Get All games</button>
+</form>
+<p>retrieves all the games associated with a user</p>
 <br>
 
-<p>from the jquery-ajax-patch project</p>
-  <h2>Get All Books</h2>
-  <form class='books' id='books-search'>
-    <div class="form-group">
-    </div>
-    <button type="submit" class="btn btn-default">Get All Books</button>
-  </form>
+<hr>
+
+<form class='games' id='game-add'>
+  <div class="form-group">
+    <!--
+    <input type="text" name="game[title]" id="game-title-add" placeholder="Resource Title Here">
+    <input type="text" name="book[author]" id="game-author-add" placeholder="Resource Author Here">-->
+  </div>
+  <button type="submit" class="btn btn-default">Add a Game</button>
+</form>
+<p>create a game</p>
+
+<hr>
 
     </body>
 </html>

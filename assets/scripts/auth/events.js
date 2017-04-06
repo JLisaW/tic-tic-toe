@@ -66,6 +66,34 @@ const onGetGame = function (event) {
   }
 }
 
+const onAddGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const game = data.game
+  console.log("you're inside addbook function", event.target)
+  if (game.id.length !== 0) {
+    gamesApi.add(data)
+      .then(gamesUi.onSuccess)
+      .catch(gamesUi.onError)
+  } else {
+    console.log('give me data')
+  }
+}
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const game = data.game
+
+  if (game.id.length !== 0) {
+    gamesApi.update(data)
+    .then(gamesUi.onNoContentSuccess)
+    .catch(gamesUi.onError)
+  } else {
+    console.log('Please provide a game id!')
+  }
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -73,6 +101,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#index').on('submit', onIndex)
   $('#game-search').on('submit', onGetGame)
+  $('#game-add').on('submit', onAddGame)
+  $('#game-update').on('submit', onUpdateGame)
 }
 
 module.exports = {
