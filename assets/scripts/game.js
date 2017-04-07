@@ -12,8 +12,12 @@ const makeMove = function (array, tile, player) {
   winningCombo(game)
 }
 
+
+$('#myModal').modal({ show: false})
+
 function announceWinner () {
-  document.getElementById('announce').innerHTML = 'Congratulations Player ' + winningPlayer + '!  You won!'
+  document.getElementById('announce').innerHTML = 'Player ' + winningPlayer + ' won!'
+  // $('#myModal').modal('show');
 }
 
 // function trackWins (winningPlayer) {
@@ -167,7 +171,7 @@ const winningCombo = function (array) {
     // trackWins(winningPlayer)
 
   }
-  // 642
+
   else if ((game[6] === game[4]) && (game[4] === game[2]) && (game[2] !== ''))
   {
     winningPlayer = game[6]

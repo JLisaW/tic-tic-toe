@@ -1,7 +1,6 @@
 body {
-  // background-image: url('/assets/images/tiedye.jpg');
+  background-image: url('/assets/images/tiedye.jpg');
   background-size: stretch;
-  background-color: #ff9966;
 };
 
 p {
@@ -12,7 +11,7 @@ h1 {
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  background-color: #ff6666;
+  background-color: #001d61;
   padding: 20px;
   width: 300px;
 }
@@ -64,6 +63,8 @@ td {
 
 #announce {
   text-align: center;
-  font-size: 18px;
+  font-size: 36px;
   padding-top: 10px;
+  color: #fff;
+
 }
