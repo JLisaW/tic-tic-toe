@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <div class="bg-warning">
+    <!-- Begin Sign In Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign In to Play!</h4>
+          </div>
+          <div class="modal-body">
+            <!--begin Sign-in form-->
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign in!</legend>
+                <input type="text" name="credentials[email]" id="sign-in email" placeholder="email please">
+                <input type="password" name="credentials[password]" id="sign-in password" placeholder="password">
+                <input type="submit" name="submit" value="Sign in!">
+              </fieldset>
+            </form>
+            <!--end Sign-in form-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- End Sign In Modal-->
+
+
+    <!-- Begin Sign Up Modal-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign In to Play!</h4>
+          </div>
+          <div class="modal-body">
+            <!-- End Sign Up Modal-->
+
+            <!-- Begin Change Password Modal-->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In to Play!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <!-- End Change Password Modal-->
+
+
+
+
+
+                    <!--begin Sign-Up form-->
+
+                    <form id="sign-up">
+                      <fieldset>
+                        <legend>Sign up!</legend>
+                        <input type="text" name="credentials[email]" id="sign-up email" placeholder="email please">
+                        <input type="password" name="credentials[password]" id="sign-up password" placeholder="password">
+                        <input type="password" name="credentials[password_confirmation]" id="sign-up password confirm" placeholder="confirm password">
+
+                        <input type="submit" name="submit" value="Sign up!">
+                      </fieldset>
+                    </form>
+
+                    <!--end Sign-up form-->
+
+                    <!--begin Sign-out form-->
+
+                    <form id="sign-out">
+                      <fieldset>
+                        <legend>Sign out!</legend>
+                        <input type="submit" name="submit" value="Sign out!">
+                      </fieldset>
+                    </form>
+
+                    <!--end Sign-out form-->
+
+                    <!--begin Change Password form-->
+
+                    <form id="change-password">
+                      <fieldset>
+                        <legend>Change Password!</legend>
+                        <input type="password" name="passwords[old]" id="old password" placeholder="old password">
+                        <input type="password" name="passwords[new]" id="new password" placeholder="new password">
+
+                        <input type="submit" name="submit" value="Change password!">
+                      </fieldset>
+                    </form>
+
+                    <!--end change Password form-->
+
+
+
+
+
+
+
+
+
+
+                    <h1 class="center">Tic Tac Toe</h1>
+
+                    <!--Begin Game Board-->
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-2 box cell">
+                          <table>
+                            <tr>
+                              <td></td>joni</tr>
+                          </table>
+                        </div>
+                        <div class="col-xs-2 box cell">2</div>
+                        <div class="col-xs-2 box cell">3</div>
+                        <div class="col-xs-3"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-2 box cell">4</div>
+                        <div class="col-xs-2 box cell">5</div>
+                        <div class="col-xs-2 box cell">6</div>
+                        <div class="col-xs-3"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-2 box cell">7</div>
+                        <div class="col-xs-2 box cell">8</div>
+                        <div class="col-xs-2 box cell">9</div>
+                        <div class="col-xs-3"></div>
+                      </div>
+
+                      <!--End Game Board-->
+
+                      <!--alternative table game board-->
+
+                      <table class="ticBoard">
+                        <tr>
+                          <!--add event listeners to each of these tiles to listen for when someone clicks on them
+         then place an x or o based on who clicked-->
+                          <td class="tile">
+                            <div class="panel" id="one">panel 1</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="two">panel 2</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="three">panel 3</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tile">
+                            <div class="panel" id="four">panel 4</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="five">panel 5</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="six">panel 6</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="tile">
+                            <div class="panel" id="seven">panel 7</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="eight">panel 8</div>
+                          </td>
+                          <td class="tile">
+                            <div class="panel" id="nine">panel 9</div>
+                          </td>
+                        </tr>
+
+                      </table>
+
+
+
+
+                      <div class="row">&nbsp;</div>
+                      <div class="row">&nbsp; </div>
+                      <div class="row"> &nbsp;</div>
+                      <div class="row"> &nbsp;</div>
+                      <div class="row"> &nbsp;</div>
+
+
+                      <div class="row">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                          <!-- Begin Sign In Button modal -->
+                          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signInModal">
+      Sign In to Play!
+      </button>
+                          <!-- End Sign In Button modal -->
+                        </div>
+                        <div class="col-xs-4"></div>
+                      </div>
+                      <div class="row"> &nbsp;</div>
+                      <div class="row"> &nbsp;</div>
+                      <div class="row"> &nbsp;</div>
+                      <div class="row">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">Don't have an account?<br> Create one!</div>
+                        <div class="col-xs-4"></div>
+                      </div>
+
+
+                      <!--ending input-->
+
+                      <p class="bg-primary">...</p>
+                      <p class="bg-success">...</p>
+                      <p class="bg-info">...</p>
+                      <p class="bg-warning">...</p>
+                      <p class="bg-danger">...</p>
+
+                    </div>
+
+                  </div>
+</body>
+
+</html>
