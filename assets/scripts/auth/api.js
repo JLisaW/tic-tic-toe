@@ -52,26 +52,15 @@ const changePassword = (data) => {
 // getting ready to add this kind of thing for the game using the code they gave us on
 // https://github.com/jonifallon/game-project-api
 
-const show = function (id) {
-  return $.ajax({
-    url: config.production + '/games/' + id,
-    method: 'GET'
-  })
-}
 
-const add = function (data) {
+const createGame = (data) => {
   return $.ajax({
-    url: config.production + '/games',
+    url: config.apiOrigin + '/games',
     method: 'POST',
-    data: data
-  })
-}
-
-const update = function (id) {
-  return $.ajax({
-    url: config.production + '/games/' + id,
-    method: 'PATCH'
-    // data: data
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -80,9 +69,10 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  show,
+  // show,
   index,
-  add,
-  update
+  createGame
+  // add,
+  // update
 
 }

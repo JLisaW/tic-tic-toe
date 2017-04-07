@@ -12,8 +12,11 @@ const makeMove = function (array, tile, player) {
   winningCombo(game)
 }
 
+$('#myModal').modal({ show: false})
+
 function announceWinner () {
-  document.getElementById('announce').innerHTML = 'Congratulations Player ' + winningPlayer + '!  You won!'
+  document.getElementById('announce').innerHTML = 'Player ' + winningPlayer + ' won!'
+  // $('#myModal').modal('show');
 }
 
 // function trackWins (winningPlayer) {
@@ -108,6 +111,7 @@ const winningCombo = function (array) {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
+
     // trackWins(winningPlayer)
     // turnoffclicks()
     //could I pop up a modal here which would announce the winner and reset the game?
@@ -167,14 +171,13 @@ const winningCombo = function (array) {
     // trackWins(winningPlayer)
 
   }
-  // 642
+
   else if ((game[6] === game[4]) && (game[4] === game[2]) && (game[2] !== ''))
   {
     winningPlayer = game[6]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
     // trackWins(winningPlayer)
-
   }
   // winningCombo(game)
   // console.log(winningCombo)

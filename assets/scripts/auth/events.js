@@ -94,6 +94,14 @@ const onUpdateGame = function (event) {
   }
 }
 
+const data ='{}'
+
+const createGame = function () {
+  api.createGame(data)
+  .then(api.createGameSuccess)
+  .catch(gamesUi.onError)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -103,6 +111,7 @@ const addHandlers = () => {
   $('#game-search').on('submit', onGetGame)
   $('#game-add').on('submit', onAddGame)
   $('#game-update').on('submit', onUpdateGame)
+  $('.create-game').on('click', createGame)
 }
 
 module.exports = {
