@@ -11,21 +11,25 @@ const makeMove = function (array, tile, player) {
   }
   winningCombo(game)
 }
-
+const isGameOver = function() {
+  // turn the gameboard off
+  // display wins
+}
 // enable / disable click events
 
-function handler(e){
-if(e.target.className=="class_name"){
-e.stopPropagation();
-e.preventDefault();
-}
-}
-// handler modified this way would disable clicks only on elements with class "class_name".
-
-function handler(e){
-    if(e.target.className!=="class_name")
-    e.stopPropagation()
-}
+// function turnoffclicks (e) {
+//   if (e.target.className === 'panel') {
+//     e.stopPropagation()
+//     e.preventDefault()
+//   }
+// }
+// // handler modified this way would disable clicks only on elements with class "class_name".
+//
+// function turnonclicks (e) {
+//   if (e.target.className === 'panel') {
+//     e.stopPropagation()
+//   }
+// }
 
 // determine tile selected by document.getElementById
 // pass that into the array at the appropriate position
@@ -86,6 +90,7 @@ const winningCombo = function (array) {
     // wait is this it?  I'm saying winning player is game 0.
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
+    // turnoffclicks()
     //could I pop up a modal here which would announce the winner and reset the game?
 
 
@@ -169,16 +174,5 @@ const winningCombo = function (array) {
 // document.getElementById('eight').addEventListener('click', function () { this.tiles = tiles[7]; console.log(this.tiles); tilesSelected.push(this.tiles); this.innerHTML = 'o' })
 // document.getElementById('nine').addEventListener('click', function () { this.tiles = tiles[8]; console.log(this.tiles); tilesSelected.push(this.tiles); this.innerHTML = 'x' })
 //
-// // write a function that does all the above, then calls isgameover.
+
 //
-// function isGameOver () {
-//   // for (let i = 0; i < tiles.length; i++) {
-//   // const i = 0
-//   if ((tilesSelected[0] === tilesSelected[1]) && (tilesSelected[0] === tilesSelected[2]) && (tilesSelected[0] !== 0)) {
-//     console.log('Blocks 1, 2 and 3 win')
-//         // _win = 1
-//     // return
-//   }
-// }
-//
-// isGameOver()
