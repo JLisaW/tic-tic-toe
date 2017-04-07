@@ -12,6 +12,21 @@ const makeMove = function (array, tile, player) {
   winningCombo(game)
 }
 
+// enable / disable click events
+
+function handler(e){
+if(e.target.className=="class_name"){
+e.stopPropagation();
+e.preventDefault();
+}
+}
+// handler modified this way would disable clicks only on elements with class "class_name".
+
+function handler(e){
+    if(e.target.className!=="class_name")
+    e.stopPropagation()
+}
+
 // determine tile selected by document.getElementById
 // pass that into the array at the appropriate position
 // so like for a click on the first tile, send x or o to game[0]
