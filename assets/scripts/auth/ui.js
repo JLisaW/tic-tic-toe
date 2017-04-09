@@ -37,11 +37,13 @@ const changePasswordFailure = (error) => {
 }
 
 const createGameFailure = (error) => {
+  console.log('create game failure ran. ')
   console.error(error)
 }
 
 const createGameSuccess = (data) => {
-  console.log('create game success ran.  data is:', data)
+  // console.log('create game success ran.  data is:', data)
+  console.log('create game success ran.')
   store.game = data.game
 }
 

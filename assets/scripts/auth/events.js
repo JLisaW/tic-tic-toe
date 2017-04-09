@@ -59,24 +59,10 @@ const onGetGame = function (event) {
 
   if (game.id.length !== 0) {
     gamesApi.show(game.id)
-      .then(gamesUi.onSuccess)
-      .catch(gamesUi.onError)
+      .then(ui.onSuccess)
+      .catch(ui.onError)
   } else {
     console.log('Please provide a book id!')
-  }
-}
-
-const onAddGame = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const game = data.game
-  console.log("you're inside addbook function", event.target)
-  if (game.id.length !== 0) {
-    gamesApi.add(data)
-      .then(gamesUi.onSuccess)
-      .catch(gamesUi.onError)
-  } else {
-    console.log('give me data')
   }
 }
 
@@ -94,13 +80,28 @@ const onUpdateGame = function (event) {
   }
 }
 
-const data ='{}'
+const data = '{}'
 
 const createGame = function () {
   api.createGame(data)
-  .then(api.createGameSuccess)
-  .catch(gamesUi.onError)
+  console.log("you're inside createGame function", event.target)
+  .then(api.createGame)
+  .catch(ui.createGameFailure)
 }
+
+// const onAddGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   const game = data.game
+//   console.log("you're inside onAddGame function", event.target)
+//   if (game.id.length !== 0) {
+//     gamesApi.add(data)
+//       .then(gamesUi.onSuccess)
+//       .catch(gamesUi.onError)
+//   } else {
+//     console.log('give me data')
+//   }
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -109,9 +110,9 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#index').on('submit', onIndex)
   $('#game-search').on('submit', onGetGame)
-  $('#game-add').on('submit', onAddGame)
+  // $('#game-add').on('submit', onAddGame)
   $('#game-update').on('submit', onUpdateGame)
-  $('.create-game').on('click', createGame)
+  $('#create-game').on('click', createGame)
 }
 
 module.exports = {
