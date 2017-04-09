@@ -46,38 +46,31 @@
 
 <!--begin laying out buttons-->
 <table class="table-for-buttons">
-<tr>
-<td>
-</td>
-</tr>
-
+  <tr>
+    <td class="table-cells-for-buttons"><input type='button' class='customcreate' value='Create Game'></td>
+  </tr>
 </table>
 
 
 <table class="table-for-buttons">
-<tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#signinModal">
-    Sign in</button>
-  </td>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#signupModal">
-  Sign Up</button>
-  </td>
-</tr>
-</table>
 
-<table class="table-for-buttons">
 <tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#changepwModal">
-  Change Password</button>
-  </td>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signinModal">
+    Sign in</button></td>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signupModal">
+  Sign Up</button></td>
+</tr>
+
+<tr>
+  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#changepwModal">
+  Change Password</button></td>
   <td class="table-cells-for-buttons"><form id="sign-out">
     <fieldset>
-      <input type="submit" name="submit" value="Sign out!">
+      <input type="submit" name="submit" value="Sign out!" class="custom-manual">
     </fieldset>
   </form>
   </td>
 </tr>
-<tr><td><input type='button' class='create-game' value='Create Game'></td><td></td></tr>
 </table>
 <!--end laying out buttons-->
 
