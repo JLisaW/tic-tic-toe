@@ -1,6 +1,12 @@
 const game = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'x'
 
+const playGame = function () {
+  //user authenticates
+  //user selectsw new game
+  //player x goes first and selects empty tile
+}
+
 const makeMove = function (array, tile, player) {
   if (currentPlayer === 'x') {
     array[tile] = currentPlayer
@@ -9,16 +15,21 @@ const makeMove = function (array, tile, player) {
     array[tile] = currentPlayer
     currentPlayer = 'x'
   }
+  // $(this).unbind('click')
   winningCombo(game)
 }
 
-$('#myModal').modal({ show: false})
+// $('#myModal').modal({ show: false})
 
 function announceWinner () {
   document.getElementById('announce').innerHTML = 'Player ' + winningPlayer + ' won!'
   // $('#myModal').modal('show');
 }
 
+function announceCat () {
+  document.getElementById('announce').innerHTML = 'Cat game!  Try again!'
+  // $('#myModal').modal('show');
+}
 // function trackWins (winningPlayer) {
 //   let xWins = 0
 //   let oWins = 0
@@ -54,10 +65,17 @@ const isGameOver = function() {
 // determine tile selected by document.getElementById
 // pass that into the array at the appropriate position
 // so like for a click on the first tile, send x or o to game[0]
+
+// function cellClick(tile) {
+//     if (cell.innerHTML === 'x' || cell.innerHTML === 'o') {
+//         return;
+//     }
+//
 let tile
 document.getElementById('one').addEventListener('click', function () {
   game[0] = currentPlayer; this.innerHTML = currentPlayer;
   makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  $(this).unbind('click')
 })
 document.getElementById('two').addEventListener('click', function () {
   game[1] = currentPlayer; this.innerHTML = currentPlayer;
@@ -179,8 +197,12 @@ const winningCombo = function (array) {
     announceWinner(winningPlayer)
     // trackWins(winningPlayer)
   }
-  // winningCombo(game)
-  // console.log(winningCombo)
+
+  else if ((game[0] !== '') && (game[1] !== '') && (game[2] !== '') && (game[3] !== '') && (game[4] !== '') && (game[5] !== '') && (game[6] !== '') && (game[7] !== '') && (game[8] !== '')) {
+    winningPlayer = false
+    console.log('Cat game - try again!')
+    announceCat()
+  }
 }
 
 // store.game = create.game

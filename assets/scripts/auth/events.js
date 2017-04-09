@@ -1,8 +1,8 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
-const gamesApi = require('./api.js')
-const gamesUi = require('./ui.js')
+// const gamesApi = require('./api.js')
+// const gamesUi = require('./ui.js')
 
 const api = require('./api')
 const ui = require('./ui')
@@ -58,9 +58,9 @@ const onGetGame = function (event) {
   const game = getFormFields(event.target).game
 
   if (game.id.length !== 0) {
-    gamesApi.show(game.id)
-      .then(gamesUi.onSuccess)
-      .catch(gamesUi.onError)
+    api.show(game.id)
+      .then(api.onSuccess)
+      .catch(api.onError)
   } else {
     console.log('Please provide a book id!')
   }
@@ -72,9 +72,9 @@ const onAddGame = function (event) {
   const game = data.game
   console.log("you're inside addbook function", event.target)
   if (game.id.length !== 0) {
-    gamesApi.add(data)
-      .then(gamesUi.onSuccess)
-      .catch(gamesUi.onError)
+    api.add(data)
+      .then(api.onSuccess)
+      .catch(api.onError)
   } else {
     console.log('give me data')
   }
@@ -86,20 +86,20 @@ const onUpdateGame = function (event) {
   const game = data.game
 
   if (game.id.length !== 0) {
-    gamesApi.update(data)
-    .then(gamesUi.onNoContentSuccess)
-    .catch(gamesUi.onError)
+    api.update(data)
+    .then(api.onNoContentSuccess)
+    .catch(api.onError)
   } else {
     console.log('Please provide a game id!')
   }
 }
 
-const data ='{}'
+const data = '{}'
 
 const createGame = function () {
   api.createGame(data)
   .then(api.createGameSuccess)
-  .catch(gamesUi.onError)
+  .catch(api.onError)
 }
 
 const addHandlers = () => {
