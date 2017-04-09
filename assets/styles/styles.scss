@@ -1,8 +1,7 @@
 body {
   // background-image: url('/assets/images/tiedye.jpg');
   background-size: stretch;
-  background-color: #4D58C4;
-
+  background-color: #e5ccff;
 };
 
 p {
@@ -13,7 +12,7 @@ h1 {
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  background-color: #001d61;
+  background-color: #bf7fff;
   padding: 20px;
   width: 300px;
 }
@@ -79,12 +78,17 @@ td {
 .customcreate {
   width: 300px;
   height: 50px;
-  background-color: #F9F9C4;
+  background-color: #cb99ff;
   font-size: 30px;
-  font-color: #001d61;
+  text-decoration-style: wavy;
+  color: #fff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .custom-manual {
   width: 140px;
   height: 32px;
+  background-color: #fff;
+  border-radius: 3px;
+  border-style: none;
 }
