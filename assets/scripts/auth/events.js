@@ -1,8 +1,8 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
-const gamesApi = require('./api.js')
-const gamesUi = require('./ui.js')
+// const gamesApi = require('./api.js')
+// const gamesUi = require('./ui.js')
 
 const api = require('./api')
 const ui = require('./ui')
@@ -66,15 +66,30 @@ const onGetGame = function (event) {
   }
 }
 
+const onAddGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const game = data.game
+  console.log("you're inside addbook function", event.target)
+  if (game.id.length !== 0) {
+    api.add(data)
+      .then(api.onSuccess)
+      .catch(api.onError)
+  } else {
+    console.log('give me data')
+  }
+}
+
+
 const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const game = data.game
 
   if (game.id.length !== 0) {
-    gamesApi.update(data)
-    .then(gamesUi.onNoContentSuccess)
-    .catch(gamesUi.onError)
+    api.update(data)
+    .then(api.onNoContentSuccess)
+    .catch(api.onError)
   } else {
     console.log('Please provide a game id!')
   }
