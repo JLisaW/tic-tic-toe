@@ -36,13 +36,12 @@ const changePasswordFailure = (error) => {
   console.error(error)
 }
 
-const createGameFailure = (error) => {
-  console.error(error)
+const createGameSuccess = (data) => {
+  store.game = data.game
 }
 
-const createGameSuccess = (data) => {
-  console.log('create game success ran.  data is:', data)
-  store.game = data.game
+const createGameFailure = (error) => {
+  return error
 }
 
 module.exports = {

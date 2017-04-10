@@ -66,19 +66,19 @@ const onGetGame = function (event) {
   }
 }
 
-const onAddGame = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const game = data.game
-  console.log("you're inside addbook function", event.target)
-  if (game.id.length !== 0) {
-    api.add(data)
-      .then(api.onSuccess)
-      .catch(api.onError)
-  } else {
-    console.log('give me data')
-  }
-}
+// const onAddGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   const game = data.game
+//   console.log("you're inside addbook function", event.target)
+//   if (game.id.length !== 0) {
+//     api.add(data)
+//       .then(api.onSuccess)
+//       .catch(api.onError)
+//   } else {
+//     console.log('give me data')
+//   }
+// }
 
 const onUpdateGame = function (event) {
   event.preventDefault()
@@ -94,12 +94,20 @@ const onUpdateGame = function (event) {
   }
 }
 
-const data = '{}'
+// const data = '{}'
+
+// const createGame = function () {
+//   api.createGame(data)
+//   console.log('in the createGame function')
+//   .then(api.createGameSuccess)
+//   .catch(api.onError)
+// }
 
 const createGame = function () {
-  api.createGame(data)
-  .then(api.createGameSuccess)
-  .catch(api.onError)
+  api.createGame()
+  // console.log('in the createGame function')
+  .then(ui.createGameSuccess)
+  .catch(ui.createGameFailure)
 }
 
 const addHandlers = () => {
@@ -109,7 +117,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#index').on('submit', onIndex)
   $('#game-search').on('submit', onGetGame)
-  $('#game-add').on('submit', onAddGame)
+  // $('#game-add').on('submit', onAddGame)
   $('#game-update').on('submit', onUpdateGame)
   $('.create-game').on('click', createGame)
 }
