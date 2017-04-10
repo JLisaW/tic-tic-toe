@@ -52,14 +52,26 @@ const changePassword = (data) => {
 // getting ready to add this kind of thing for the game using the code they gave us on
 // https://github.com/jonifallon/game-project-api
 
-const createGame = (data) => {
+// const createGame = (data) => {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+
+const createGame = () => {
+ // console.log('created the game')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: ''
   })
 }
 

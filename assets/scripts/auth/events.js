@@ -66,19 +66,19 @@ const onGetGame = function (event) {
   }
 }
 
-const onAddGame = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const game = data.game
-  console.log("you're inside addbook function", event.target)
-  if (game.id.length !== 0) {
-    api.add(data)
-      .then(api.onSuccess)
-      .catch(api.onError)
-  } else {
-    console.log('give me data')
-  }
-}
+// const onAddGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   const game = data.game
+//   console.log("you're inside addbook function", event.target)
+//   if (game.id.length !== 0) {
+//     api.add(data)
+//       .then(api.onSuccess)
+//       .catch(api.onError)
+//   } else {
+//     console.log('give me data')
+//   }
+// }
 
 
 const onUpdateGame = function (event) {
@@ -95,12 +95,19 @@ const onUpdateGame = function (event) {
   }
 }
 
-const data = '{}'
+// const data = '{}'
+
+// const createGame = function () {
+//   api.createGame(data)
+//   console.log('in the createGame function')
+//   .then(api.createGameSuccess)
+//   .catch(api.onError)
+// }
 
 const createGame = function () {
-  api.createGame(data)
-  console.log("you're inside createGame function", event.target)
-  .then(api.createGame)
+  api.createGame()
+  // console.log('in the createGame function')
+  .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
 }
 
