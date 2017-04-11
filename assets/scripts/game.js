@@ -1,11 +1,14 @@
-const game = ['', '', '', '', '', '', '', '', '']
+const cells = ['', '', '', '', '', '', '', '', '']
+const player_x = 'x'
+const player_o = 'o'
 let currentPlayer = 'x'
+const game = cells
 
-const playGame = function () {
-  //user authenticates
-  //user selectsw new game
-  //player x goes first and selects empty tile
-}
+// const playGame = function () {
+//   // user authenticates
+//   // user selectsw new game
+//   // player x goes first and selects empty tile
+// }
 
 const makeMove = function (array, tile, player) {
   if (currentPlayer === 'x') {
@@ -18,8 +21,6 @@ const makeMove = function (array, tile, player) {
   // $(this).unbind('click')
   winningCombo(game)
 }
-
-
 
 function announceWinner () {
   document.getElementById('announce').innerHTML = 'Player ' + winningPlayer + ' won!'
@@ -42,10 +43,10 @@ function announceCat () {
 //   console.log(winningPlayer + oWins + 'this is trackwins')
 // }
 
-const isGameOver = function() {
-  // turn the gameboard off
-  // display wins
-}
+// const isGameOver = function() {
+//   // turn the gameboard off
+//   // display wins
+// }
 // enable / disable click events
 
 // function turnoffclicks (e) {
@@ -73,55 +74,44 @@ const isGameOver = function() {
 //
 let tile
 document.getElementById('one').addEventListener('click', function () {
-  game[0] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[0] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
   $(this).unbind('click')
 })
 document.getElementById('two').addEventListener('click', function () {
-  game[1] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[1] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('three').addEventListener('click', function () {
-  game[2] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[2] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('four').addEventListener('click', function () {
-  game[3] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[3] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('five').addEventListener('click', function () {
-  game[4] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[4] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('six').addEventListener('click', function () {
-  game[5] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[5] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('seven').addEventListener('click', function () {
-  game[6] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[6] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('eight').addEventListener('click', function () {
-  game[7] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[7] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 document.getElementById('nine').addEventListener('click', function () {
-  game[8] = currentPlayer; this.innerHTML = currentPlayer;
-  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer);
+  game[8] = currentPlayer; this.innerHTML = currentPlayer
+  makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
 })
 
-// makeMove(game, tile, currentPlayer)
-
-// console.log(game)
-// console.log(currentPlayer)
-
-// makeMove(game, 0, currentPlayer)
-
-// console.log(game)
-// console.log(currentPlayer)
-
 let winningPlayer
-
 const winningCombo = function (array) {
 // [[0 1 2],
   if ((game[0] === game[1]) && (game[1] === game[2]) && (game[2] !== '')) {
@@ -131,74 +121,36 @@ const winningCombo = function (array) {
     announceWinner(winningPlayer)
     // trackWins(winningPlayer)
     // turnoffclicks()
-    //could I pop up a modal here which would announce the winner and reset the game?
-
-  }
-  // [345
-  else if ((game[3] === game[4]) && (game[4] === game[5]) && (game[5] !== ''))
-  {
+    // could I pop up a modal here which would announce the winner and reset the game?
+  } else if ((game[3] === game[4]) && (game[4] === game[5]) && (game[5] !== '')) {
     winningPlayer = game[3]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-  // 678,
-  else if ((game[6] === game[7]) && (game[7] === game[8]) && (game[8] !== ''))
-  {
+  } else if ((game[6] === game[7]) && (game[7] === game[8]) && (game[8] !== '')) {
     winningPlayer = game[6]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-  // 036
-  else if ((game[0] === game[3]) && (game[3] === game[6]) && (game[6] !== ''))
-  {
+  } else if ((game[0] === game[3]) && (game[3] === game[6]) && (game[6] !== '')) {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-  // [147
-  else if ((game[1] === game[4]) && (game[4] === game[7]) && (game[7] !== ''))
-  {
+  } else if ((game[1] === game[4]) && (game[4] === game[7]) && (game[7] !== '')) {
     winningPlayer = game[1]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-  // [258
-  else if ((game[2] === game[5]) && (game[5] === game[8]) && (game[8] !== ''))
-  {
+  } else if ((game[2] === game[5]) && (game[5] === game[8]) && (game[8] !== '')) {
     winningPlayer = game[2]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-  // [048
-  else if ((game[0] === game[4]) && (game[4] === game[8]) && (game[8] !== ''))
-  {
+  } else if ((game[0] === game[4]) && (game[4] === game[8]) && (game[8] !== '')) {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-
-  else if ((game[6] === game[4]) && (game[4] === game[2]) && (game[2] !== ''))
-  {
+  } else if ((game[6] === game[4]) && (game[4] === game[2]) && (game[2] !== '')) {
     winningPlayer = game[6]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    // trackWins(winningPlayer)
-
-  }
-
-  else if ((game[0] !== '') && (game[1] !== '') && (game[2] !== '') && (game[3] !== '') && (game[4] !== '') && (game[5] !== '') && (game[6] !== '') && (game[7] !== '') && (game[8] !== '')) {
+  } else if ((game[0] !== '') && (game[1] !== '') && (game[2] !== '') && (game[3] !== '') && (game[4] !== '') && (game[5] !== '') && (game[6] !== '') && (game[7] !== '') && (game[8] !== '')) {
     winningPlayer = false
     console.log('Cat game - try again!')
     announceCat()

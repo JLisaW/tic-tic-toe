@@ -1,13 +1,14 @@
 curl --include --request GET "http://localhost:4741/games" \
   --header "Content-Type: application/json" \
   --data '{
-  "games": {
+  "game": {
     "id": ,
-    "game": ["","","","","","","","",""],
+    "cells": ["","","","","","","","",""],
     "over": false,
-    "currentPlayer": {
+    "player_x": {
       "id": ,
-      "email": "aa"
+      "email": ""
     },
-  },
-}'
+    "player_o": null
+  }
+}

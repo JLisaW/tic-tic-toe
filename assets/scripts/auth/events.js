@@ -1,8 +1,6 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
-// const gamesApi = require('./api.js')
-// const gamesUi = require('./ui.js')
 
 const api = require('./api')
 const ui = require('./ui')
@@ -47,7 +45,6 @@ const onChangePassword = function (event) {
 
 const onIndex = function (event) {
   event.preventDefault()
-
   api.index()
     .then(ui.onSuccess)
     .catch(ui.onError)
@@ -58,7 +55,7 @@ const onGetGame = function (event) {
   const game = getFormFields(event.target).game
 
   if (game.id.length !== 0) {
-    gamesApi.show(game.id)
+    api.show(game.id)
       .then(ui.onSuccess)
       .catch(ui.onError)
   } else {
@@ -79,7 +76,6 @@ const onGetGame = function (event) {
 //     console.log('give me data')
 //   }
 // }
-
 
 const onUpdateGame = function (event) {
   event.preventDefault()
@@ -104,9 +100,9 @@ const onUpdateGame = function (event) {
 //   .catch(api.onError)
 // }
 
-const createGame = function () {
+const createGame = function (event) {
+  event.preventDefault()
   api.createGame()
-  // console.log('in the createGame function')
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
 }
@@ -132,9 +128,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#index').on('submit', onIndex)
   $('#game-search').on('submit', onGetGame)
-  // $('#game-add').on('submit', onAddGame)
   $('#game-update').on('submit', onUpdateGame)
-  $('#create-game').on('click', createGame)
+  $('.create-game').on('click', createGame)
 }
 
 module.exports = {

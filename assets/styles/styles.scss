@@ -1,7 +1,8 @@
 body {
   // background-image: url('/assets/images/tiedye.jpg');
-  background-size: stretch;
   background-color: #e5ccff;
+  background-size: stretch;
+
 };
 
 p {
@@ -9,11 +10,11 @@ p {
 };
 
 h1 {
-  margin: 0 auto;
-  text-align: center;
-  color: #fff;
   background-color: #bf7fff;
+  color: #fff;
+  margin: 0 auto;
   padding: 20px;
+  text-align: center;
   width: 300px;
 }
 
@@ -45,50 +46,41 @@ td {
   width: 140px;
 }
 
-// .tile {
-//   vertical-align: middle;
-// }
-//
 .panel {
-  width: 100px;
-  height: 100px;
-//   //border-radius: 5px;
-  font-size: 75px;
-  text-align: center;
-  margin: auto;
-  // float: left;
   border-color: #000;
+  font-size: 75px;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  width: 100px;
 }
-//
+
 .ticBoard {
-  width: auto;
   margin-left: auto;
   margin-right: auto;
-  // background-color: pink;
+  width: auto;
 }
 
 #announce {
-  text-align: center;
+  color: #76448a;
   font-size: 32px;
   padding-top: 10px;
-  color: #76448a;
-
+  text-align: center;
 }
 
 .customcreate {
-  width: 300px;
-  height: 50px;
   background-color: #cb99ff;
-  font-size: 30px;
-  text-decoration-style: wavy;
   color: #fff;
+  font-size: 30px;
+  height: 50px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  width: 300px;
 }
 
 .custom-manual {
-  width: 140px;
-  height: 32px;
   background-color: #fff;
   border-radius: 3px;
   border-style: none;
+  height: 32px;
+  width: 140px;
 }

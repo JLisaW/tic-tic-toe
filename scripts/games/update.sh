@@ -3,7 +3,7 @@ curl --include --request GET "http://localhost:4741/games" \
   --data '{
   "game": {
     "id": 1,
-    "cells": ["","","","","","","","",""],
+    "game": ["","","","","","","","",""],
     "over":false,
     "player_x": {
       "id": 1,
