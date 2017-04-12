@@ -41,22 +41,21 @@
    <div class="row">&nbsp;</div>
 
 
-<!--begin laying out buttons-->
+   <table class="table-for-buttons">
+     <tr><td>
+       <!-- <td class="table-cells-for-buttons"><form id="create-game"> -->
+         <!-- <fieldset>
+           <input type="submit" name="submit" value="New Game!" class="customcreate">
+         </fieldset> -->
+         <button class="create-game clearBoard customcreate">Create Game</button>
+       <!-- </form> -->
+     </td>
+     </tr>
+   </table>
+
+
+<!--begin auth buttons-->
 <table class="table-for-buttons">
-  <tr><td>
-    <!-- <td class="table-cells-for-buttons"><form id="create-game"> -->
-      <!-- <fieldset>
-        <input type="submit" name="submit" value="New Game!" class="customcreate">
-      </fieldset> -->
-      <button class="create-game">Create Game</button>should hide until after signin
-    <!-- </form> -->
-  </td>
-  </tr>
-</table>
-
-
-<table class="table-for-buttons">
-
 <tr>
   <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signinModal">
     Sign in</button></td>
@@ -75,7 +74,7 @@
   </td>
 </tr>
 </table>
-<!--end laying out buttons-->
+<!--end auth buttons-->
 
   <!-- signin Modal -->
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">

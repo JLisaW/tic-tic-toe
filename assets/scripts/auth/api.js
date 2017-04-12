@@ -50,7 +50,8 @@ const changePassword = (data) => {
 }
 
 const createGame = () => {
- // console.log('created the game')
+  // iterate through array and make all fields blank
+  console.log('game created using the createGame function')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
