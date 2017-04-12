@@ -4,7 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-// const game = require('../game')
+const game = require('../game')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -103,7 +103,8 @@ const onUpdateGame = function (event) {
 
 const createGame = function (event) {
   event.preventDefault()
-  // game.clearBoard()
+  game.clearBoard()
+  game.removeXO()
   api.createGame()
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)

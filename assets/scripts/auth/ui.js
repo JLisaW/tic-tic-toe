@@ -38,6 +38,7 @@ const changePasswordFailure = (error) => {
 
 const createGameSuccess = (data) => {
   store.game = data.game
+  console.log(store.game)
 }
 
 const createGameFailure = (error) => {
