@@ -63,12 +63,27 @@ const createGame = () => {
   })
 }
 
+const updateGame = () => {
+  // iterate through array and make all fields blank
+  // this is the request to the server
+  console.log('game created using the createGame function')
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: ''
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   index,
-  createGame
+  createGame,
+  updateGame
 
 }

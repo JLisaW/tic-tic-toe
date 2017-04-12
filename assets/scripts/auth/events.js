@@ -106,6 +106,8 @@ const createGame = function (event) {
   game.clearBoard()
   game.removeXO()
   api.createGame()
+  // game.moveData.game.over = false
+  // game.gameOver = false
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
 }

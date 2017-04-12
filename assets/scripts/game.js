@@ -5,6 +5,16 @@ let gameOver = false
 let currentPlayer = 'x'
 // const game = cells
 
+const moveData = {
+  'game': {
+    'cell': {
+      'index': '',
+      'value': ''
+    },
+    'over': false
+  }
+}
+
 function clearBoard () {
   console.log('in the clearBoard function now')
   for (const i in game) {
@@ -14,6 +24,8 @@ function clearBoard () {
 
 function removeXO () {
   console.log('in the removeXO function now')
+  gameOver = false
+  moveData.game.over = false
   document.getElementById('one').innerHTML = ''
   document.getElementById('two').innerHTML = ''
   document.getElementById('three').innerHTML = ''
@@ -40,64 +52,20 @@ const makeMove = function (array, tile, player) {
 function announceWinner () {
   document.getElementById('announce').innerHTML = 'Player ' + winningPlayer + ' won!'
   gameOver = true
+  moveData.game.over = true
+  console.log(moveData)
   // $('#myModal').modal('show');
 }
 
 function announceCat () {
   document.getElementById('announce').innerHTML = 'Cat game!  Try again!'
   gameOver = true
+  moveData.game.over = true
   // $('#myModal').modal('show');
 }
-// function trackWins (winningPlayer) {
-//   let xWins = 0
-//   let oWins = 0
-//   if (winningPlayer === 'x') {
-//     xWins++
-//   }
-//   else {
-//     oWins++
-//   }
-//   console.log(winningPlayer + oWins + 'this is trackwins')
-// }
-
-// const isGameOver = function() {
-//   // turn the gameboard off
-//   // display wins
-// }
-// enable / disable click events
-
-// function turnoffclicks (e) {
-//   if (e.target.className === 'panel') {
-//     e.stopPropagation()
-//     e.preventDefault()
-//   }
-// }
-// // handler modified this way would disable clicks only on elements with class "class_name".
-//
-// function turnonclicks (e) {
-//   if (e.target.className === 'panel') {
-//     e.stopPropagation()
-//   }
-// }
-
-// determine tile selected by document.getElementById
-// pass that into the array at the appropriate position
-// so like for a click on the first tile, send x or o to game[0]
-
-// function cellClick(tile) {
-//     if (cell.innerHTML === 'x' || cell.innerHTML === 'o') {
-//         return;
-//     }
-//
-
-
 
 let tile
-// document.getElementById('one').addEventListener('click', function () {
-//   game[0] = currentPlayer; this.innerHTML = currentPlayer
-//   makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-//   $(this).unbind('click')
-// })
+
 document.getElementById('one').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     console.log(gameOver)
@@ -212,5 +180,7 @@ const winningCombo = function (array) {
 // store.game = create.game
 module.exports = {
   clearBoard,
-  removeXO
+  removeXO,
+  gameOver,
+  moveData
 }
