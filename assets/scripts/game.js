@@ -1,9 +1,19 @@
+const api = require('./auth/api')
+const ui = require('./auth/ui')
 const game = ['', '', '', '', '', '', '', '', '']
 const player_x = 'x'
 const player_o = 'o'
 let gameOver = false
 let currentPlayer = 'x'
 // const game = cells
+
+// when user access page, only show signin or sighup.
+// then after aujth, present board  pw reset, new game button
+// show and/or hid elements by id
+// jquery
+// hid signin once your'e in and enable it once yourre out
+
+// add stats
 
 const moveData = {
   'game': {
@@ -38,6 +48,9 @@ function removeXO () {
 }
 
 const makeMove = function (array, tile, player) {
+  api.updateGame(moveData)
+  .then(ui.updateGameSuccess)
+  .catch(ui.updateGameFailure)
   if (currentPlayer === 'x') {
     array[tile] = currentPlayer
     currentPlayer = 'o'
@@ -70,64 +83,73 @@ document.getElementById('one').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     console.log(gameOver)
     game[0] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 0
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('two').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[1] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 1
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('three').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[2] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 2
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('four').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[3] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 3
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('five').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[4] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 4
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('six').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[5] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 5
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('seven').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[6] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 6
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('eight').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[7] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 7
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 document.getElementById('nine').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
     game[8] = currentPlayer; this.innerHTML = currentPlayer
+    moveData.game.cell.index = 8
+    moveData.game.cell.value = currentPlayer
     makeMove(game, tile, currentPlayer); console.log(game + currentPlayer)
-    $(this).unbind('click')
   }
 })
 

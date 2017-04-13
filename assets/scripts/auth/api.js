@@ -63,17 +63,14 @@ const createGame = () => {
   })
 }
 
-const updateGame = () => {
-  // iterate through array and make all fields blank
-  // this is the request to the server
-  console.log('game created using the createGame function')
+const updateGame = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/games',
-    method: 'POST',
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: ''
+    data
   })
 }
 
