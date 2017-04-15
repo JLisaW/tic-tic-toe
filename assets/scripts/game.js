@@ -4,6 +4,29 @@ const player_o = 'o'
 let gameOver = false
 let currentPlayer = 'x'
 
+// left to do
+// authentication successful messages
+  // signin
+  // signout
+  // password change
+  // signUp
+// hide elements at startup
+  // gameboard
+  // start game
+  // password change
+  // signout
+  // user stats
+// enable after signin
+  // board
+  // start game
+  // password changes
+  // signout
+  // user stats
+// hide after signin
+  // sign up
+// show user stats
+// write readme
+
 function clearBoard () {
   console.log('in the clearBoard function now')
   for (const i in game) {
