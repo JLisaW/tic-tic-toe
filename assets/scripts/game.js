@@ -140,7 +140,7 @@ const winningCombo = function (array) {
     winningPlayer = game[0]
     console.log('Player ' + winningPlayer + ' wins!')
     announceWinner(winningPlayer)
-    gameOver = truei
+    gameOver = true
   } else if ((game[3] === game[4]) && (game[4] === game[5]) && (game[5] !== '')) {
     winningPlayer = game[3]
     console.log('Player ' + winningPlayer + ' wins!')
