@@ -5,6 +5,8 @@ const store = require('../store')
 const signUpSuccess = (data) => {
   $('#signup').hide()
   $('#signin').show()
+  $('#signupSuccessAnnounce').show()
+  $('#signoutSuccessAnnounce').hide()
   console.log(data)
 }
 
@@ -20,6 +22,9 @@ const signInSuccess = (data) => {
   $('#signin').hide()
   $('#chpw').show()
   $('#newgame').show()
+  $('#signinSuccessAnnounce').show()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signupSuccessAnnounce').hide()
   store.user = data.user
 }
 
@@ -34,6 +39,10 @@ const signOutSuccess = (data) => {
   $('#signup').show()
   $('#newgame').hide()
   $('.ticBoard').hide()
+  $('#signinSuccessAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').show()
   console.log('signout success and nothing was returned')
   store.user = null
 }
@@ -43,6 +52,8 @@ const signOutFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
+  $('#signinSuccessAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').show()
   console.log('password successfully changed')
 }
 

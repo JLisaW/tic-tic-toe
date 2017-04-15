@@ -36,6 +36,7 @@ function startGame () {
   gameOver = false
   document.getElementById('announce').innerHTML = ''
   $('.ticBoard').show()
+  $('#signinSuccessAnnounce').hide()
 }
 // function trackWins (winningPlayer) {
 //   let xWins = 0
