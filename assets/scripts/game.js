@@ -6,32 +6,24 @@ let currentPlayer = 'x'
 
 // left to do
 // authentication successful messages
+// FOR THESE, CREATE DIVS IN THE INDEX AND POPULATE WITH MSG.
+  // THEN USE THE SAME HIDE/SHOW CODE TO DISPLAY MESSAGES WHEN APPROPRIATE!!
   // signin
   // signout
   // password change
   // signUp
 // hide elements at startup
-  // DONE  gameboard (.ticBoard)
-  // DONE start game (#newgame)
-  // password change (#pwch)
-  // signout (#signoff)
   // user stats
 // enable after signin
-  // board
-  // start game
-  // password changes
-  // signout
   // user stats
-// hide after signin
-  // sign up
 // hide after signout
-  // gameboard
-  // start game
-  // password change
-  // sigouut
   // user stats
 // show user stats
 // write readme
+// API stuff
+  // get game
+  // update game
+  // get all games
 
 function clearBoard () {
   console.log('in the clearBoard function now')

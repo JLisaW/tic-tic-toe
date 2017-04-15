@@ -18,7 +18,6 @@ const signInSuccess = (data) => {
   $('#signin').hide()
   $('#chpw').show()
   $('#newgame').show()
-  $('.ticBoard').show()
   store.user = data.user
 }
 
