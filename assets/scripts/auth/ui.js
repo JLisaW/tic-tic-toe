@@ -37,6 +37,7 @@ const changePasswordFailure = (error) => {
 }
 
 const createGameSuccess = (data) => {
+  console.log('create game success ran.  data is:', data)
   store.game = data.game
   console.log(store.game)
 }

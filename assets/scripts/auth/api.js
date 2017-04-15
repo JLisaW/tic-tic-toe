@@ -19,7 +19,7 @@ const signUp = (data) => {
 }
 
 const signIn = (data) => {
-  // console.log('not here?')
+  // console.log('signin function api', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
