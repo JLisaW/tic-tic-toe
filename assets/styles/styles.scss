@@ -55,7 +55,28 @@ td {
   width: 100px;
 }
 
+#newgame {
+  display:none;
+}
+
+#chpw {
+  display: none;
+}
+
+#signoff {
+  display: none;
+}
+
+#signup {
+  display: block;
+}
+
+#signin {
+  display: block;
+}
+
 .ticBoard {
+  display: none;
   margin-left: auto;
   margin-right: auto;
   width: auto;

@@ -12,6 +12,13 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   console.log('signin success ran.  data is:', data)
+  // now enable new game stuff
+  $('#signoff').show()
+  $('#signup').hide()
+  $('#signin').hide()
+  $('#chpw').show()
+  $('#newgame').show()
+  $('.ticBoard').show()
   store.user = data.user
 }
 
@@ -20,6 +27,12 @@ const signInFailure = (error) => {
 }
 
 const signOutSuccess = (data) => {
+  $('#signin').show()
+  $('#chpw').hide()
+  $('#signoff').hide()
+  $('#signup').show()
+  $('#newgame').hide()
+  $('.ticBoard').hide()
   console.log('signout success and nothing was returned')
   store.user = null
 }

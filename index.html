@@ -47,7 +47,7 @@
          <!-- <fieldset>
            <input type="submit" name="submit" value="New Game!" class="customcreate">
          </fieldset> -->
-         <button class="create-game clearBoard customcreate">Create Game</button>
+         <button class="create-game clearBoard customcreate" id="newgame">Create Game</button>
        <!-- </form> -->
      </td>
      </tr>
@@ -57,18 +57,18 @@
 <!--begin auth buttons-->
 <table class="table-for-buttons">
 <tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signinModal">
+  <td class="table-cells-for-buttons"><button id="signin" type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signinModal">
     Sign in</button></td>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signupModal">
+  <td class="table-cells-for-buttons"><button id="signup" type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signupModal">
   Sign Up</button></td>
 </tr>
 
 <tr>
-  <td class="table-cells-for-buttons"><button type="button" class="btn btn-default custom" data-toggle="modal" data-target="#changepwModal">
+  <td class="table-cells-for-buttons"><button id="chpw" type="button" class="btn btn-default custom" data-toggle="modal" data-target="#changepwModal">
   Change Password</button></td>
   <td class="table-cells-for-buttons"><form id="sign-out">
     <fieldset>
-      <input type="submit" name="submit" value="Sign out!" class="custom-manual">
+      <input type="submit" id="signoff" name="submit" value="Sign out!" class="custom-manual">
     </fieldset>
   </form>
   </td>

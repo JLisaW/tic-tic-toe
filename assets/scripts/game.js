@@ -11,10 +11,10 @@ let currentPlayer = 'x'
   // password change
   // signUp
 // hide elements at startup
-  // gameboard
-  // start game
-  // password change
-  // signout
+  // DONE  gameboard (.ticBoard)
+  // DONE start game (#newgame)
+  // password change (#pwch)
+  // signout (#signoff)
   // user stats
 // enable after signin
   // board
@@ -24,6 +24,12 @@ let currentPlayer = 'x'
   // user stats
 // hide after signin
   // sign up
+// hide after signout
+  // gameboard
+  // start game
+  // password change
+  // sigouut
+  // user stats
 // show user stats
 // write readme
 
@@ -37,6 +43,7 @@ function clearBoard () {
 function startGame () {
   gameOver = false
   document.getElementById('announce').innerHTML = ''
+  $('.ticBoard').show()
 }
 // function trackWins (winningPlayer) {
 //   let xWins = 0
