@@ -3,6 +3,8 @@
 const store = require('../store')
 
 const signUpSuccess = (data) => {
+  $('#signup').hide()
+  $('#signin').show()
   console.log(data)
 }
 
