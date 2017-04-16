@@ -11,7 +11,6 @@ const store = require('../store')
 // $('#signoutSuccessAnnounce').hide()
 // $('#signoutFailureAnnounce').hide()
 
-
 const signUpSuccess = (data) => {
   $('#signup').hide()
   $('#signin').show()

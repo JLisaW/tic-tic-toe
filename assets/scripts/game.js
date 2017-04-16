@@ -1,3 +1,5 @@
+const api = require('./auth/api')
+
 const game = ['', '', '', '', '', '', '', '', '']
 const player_x = 'x'
 const player_o = 'o'
@@ -7,6 +9,7 @@ let currentPlayer = 'x'
 // LEFT TO DO
 // hide WINNER announcement as soon as user selects any item after a game
   // has been won
+  // HIDE PW RESET MESSAGE (AND ANY OTHERS) AFTER A CAT GAME OR ANY GAME
 // hide elements at startup
   // user stats
 // enable after signin
@@ -19,6 +22,8 @@ let currentPlayer = 'x'
   // get game
   // update game
   // get all games
+
+api.index()
 
 function clearBoard () {
   console.log('in the clearBoard function now')
