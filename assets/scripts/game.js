@@ -4,14 +4,9 @@ const player_o = 'o'
 let gameOver = false
 let currentPlayer = 'x'
 
-// left to do
-// authentication successful messages
-// FOR THESE, CREATE DIVS IN THE INDEX AND POPULATE WITH MSG.
-  // THEN USE THE SAME HIDE/SHOW CODE TO DISPLAY MESSAGES WHEN APPROPRIATE!!
-  // signin
-  // signout
-  // password change
-  // signUp
+// LEFT TO DO
+// hide WINNER announcement as soon as user selects any item after a game
+  // has been won
 // hide elements at startup
   // user stats
 // enable after signin
@@ -36,7 +31,14 @@ function startGame () {
   gameOver = false
   document.getElementById('announce').innerHTML = ''
   $('.ticBoard').show()
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
   $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
 }
 // function trackWins (winningPlayer) {
 //   let xWins = 0

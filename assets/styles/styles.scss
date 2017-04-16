@@ -75,16 +75,23 @@ td {
   display: block;
 }
 
-#signinSuccessAnnounce, #signinFailureAnnounce, #pwchangeSuccessAnnounce,
-#pwchangeFailureAnnounce, #signupSuccessAnnounce, #signupFailureAnnounce,
+#signinSuccessAnnounce, #pwchangeSuccessAnnounce, #signupSuccessAnnounce,
 #signoutSuccessAnnounce {
-  color: #76448a;
-  font-size: 32px;
+  color: #009900;
+  font-size: 24px;
   padding-top: 10px;
   text-align: center;
   display: none;
 }
 
+#signinFailureAnnounce, #pwchangeFailureAnnounce, #signupFailureAnnounce,
+#signoutFailureAnnounce {
+  color: #ff0000;
+  font-size: 24px;
+  padding-top: 10px;
+  text-align: center;
+  display: none;
+}
 
 .ticBoard {
   display: none;

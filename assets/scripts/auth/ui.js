@@ -2,15 +2,39 @@
 
 const store = require('../store')
 
+// $('#signupSuccessAnnounce').hide()
+// $('#signupFailureAnnounce').hide()
+// $('#signinSuccessAnnounce').hide()
+// $('#signinFailureAnnounce').hide()
+// $('#pwchangeSuccessAnnounce').hide()
+// $('#pwchangeFailureAnnounce').hide()
+// $('#signoutSuccessAnnounce').hide()
+// $('#signoutFailureAnnounce').hide()
+
+
 const signUpSuccess = (data) => {
   $('#signup').hide()
   $('#signin').show()
   $('#signupSuccessAnnounce').show()
+  $('#signupFailureAnnounce').hide()
+  $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   console.log(data)
 }
 
 const signUpFailure = (error) => {
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').show()
+  $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   console.error(error)
 }
 
@@ -22,13 +46,26 @@ const signInSuccess = (data) => {
   $('#signin').hide()
   $('#chpw').show()
   $('#newgame').show()
-  $('#signinSuccessAnnounce').show()
-  $('#signoutSuccessAnnounce').hide()
   $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
+  $('#signinSuccessAnnounce').show()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   store.user = data.user
 }
 
 const signInFailure = (error) => {
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
+  $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').show()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   console.error('signin failure ran.  error is:', error)
 }
 
@@ -39,25 +76,51 @@ const signOutSuccess = (data) => {
   $('#signup').show()
   $('#newgame').hide()
   $('.ticBoard').hide()
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
   $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
   $('#pwchangeSuccessAnnounce').hide()
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').show()
+  $('#signoutFailureAnnounce').hide()
   console.log('signout success and nothing was returned')
   store.user = null
 }
 
 const signOutFailure = (error) => {
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
+  $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').show()
   console.error(error)
 }
 
 const changePasswordSuccess = (data) => {
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
   $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
   $('#pwchangeSuccessAnnounce').show()
+  $('#pwchangeFailureAnnounce').hide()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   console.log('password successfully changed')
 }
 
 const changePasswordFailure = (error) => {
+  $('#signupSuccessAnnounce').hide()
+  $('#signupFailureAnnounce').hide()
+  $('#signinSuccessAnnounce').hide()
+  $('#signinFailureAnnounce').hide()
+  $('#pwchangeSuccessAnnounce').hide()
+  $('#pwchangeFailureAnnounce').show()
+  $('#signoutSuccessAnnounce').hide()
+  $('#signoutFailureAnnounce').hide()
   console.error(error)
 }
 
