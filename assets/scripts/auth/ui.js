@@ -83,6 +83,7 @@ const signOutSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').show()
   $('#signoutFailureAnnounce').hide()
+  document.getElementById('announce').innerHTML = ''
   console.log('signout success and nothing was returned')
   store.user = null
 }
@@ -108,6 +109,7 @@ const changePasswordSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  document.getElementById('announce').innerHTML = ''
   console.log('password successfully changed')
 }
 
@@ -120,6 +122,7 @@ const changePasswordFailure = (error) => {
   $('#pwchangeFailureAnnounce').show()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  document.getElementById('announce').innerHTML = ''
   console.error(error)
 }
 

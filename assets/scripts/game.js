@@ -6,10 +6,27 @@ const player_o = 'o'
 let gameOver = false
 let currentPlayer = 'x'
 
+// const playerStats = (data) => {
+//   const stats = {
+//     wins: 0,
+//     losses: 0,
+//     ties: 0
+//   }
+//   const games = data.games // games is an array
+//   for (let i = 0, max = games.length; i < max; i++) {
+//     if (winningPlayer(games[i]) === user.id) {
+//       stats.wins++
+//     } else if (winningPlayer(games[i])) {
+//       stats.losses++
+//     } else {
+//       stats.ties++
+//     }
+//   }
+//
+//   return stats
+// }
+
 // LEFT TO DO
-// hide WINNER announcement as soon as user selects any item after a game
-  // has been won
-  // HIDE PW RESET MESSAGE (AND ANY OTHERS) AFTER A CAT GAME OR ANY GAME
 // hide elements at startup
   // user stats
 // enable after signin
@@ -17,13 +34,10 @@ let currentPlayer = 'x'
 // hide after signout
   // user stats
 // show user stats
-// write readme
 // API stuff
   // get game
   // update game
   // get all games
-
-api.index()
 
 function clearBoard () {
   console.log('in the clearBoard function now')
