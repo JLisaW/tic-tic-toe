@@ -5,6 +5,7 @@ const player_x = 'x'
 const player_o = 'o'
 let gameOver = false
 let currentPlayer = 'x'
+let tile
 
 // const playerStats = (data) => {
 //   const stats = {
@@ -59,29 +60,6 @@ function startGame () {
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
 }
-// function trackWins (winningPlayer) {
-//   let xWins = 0
-//   let oWins = 0
-//   if (winningPlayer === 'x') {
-//     xWins++
-//   }
-//   else {
-//     oWins++
-//   }
-//   console.log(winningPlayer + oWins + 'this is trackwins')
-// }
-
-// const winner = function () {
-  // let xWins = 0
-  // let oWins = 0
-//   if (winningPlayer === 'x') {
-//     xWins +=
-//     console.log('x has ' + xWins + ' wins')
-//   } else {
-//     oWins +=
-//     console.log('o has ' + oWins + ' wins')
-//   }
-// }
 
 function removeXO () {
   console.log('in the removeXO function now')
@@ -103,13 +81,6 @@ function announceWinner () {
 function announceCat () {
   document.getElementById('announce').innerHTML = 'Cat game!  Try again!'
 }
-
-function toggleTable () {
-  const lTable = document.getElementById('tictactoeBoard')
-  lTable.style.display = (lTable.style.display === 'table') ? 'none' : 'table'
-}
-
-let tile
 
 document.getElementById('one').addEventListener('click', function () {
   if (this.innerHTML === '' && gameOver === false) {
@@ -232,6 +203,5 @@ const winningCombo = function (array) {
 module.exports = {
   clearBoard,
   removeXO,
-  toggleTable,
   startGame
 }
