@@ -7,7 +7,7 @@ Tic Tac Toe:  Game project by Joni Fallon
 This game is coded to allow for a single-player to enjoy a game of Tic Tac Toe.
 Player will play against him/herself, taking turns as both X and O.
 
-The code was written using Javascript, JSON, JQuery, Bootstrap, CSS and HTML.  An API is in
+The code was written using Javascript, JQuery, JSON, Bootstrap, CSS and HTML.  An API is in
 place to track the number of user games.
 
 PLANNING
@@ -29,13 +29,20 @@ i. As a developer, I want users to see buttons appropriate for their task at han
 CODING APPROACH
 
 I began by coding the game logic which required several iterations.  I then
-worked through CSS, Bootstrap, and HTML to layout the design.  I then put in
-user facing messages to inform the user about the status of authentication
+worked through CSS, Bootstrap, and HTML to layout the design.  I then added
+user facing messages to inform the user about the status of authentication.
 
 CHALLENGES
 
 My first attempt at the logic for determing a winner was not successful, so I
-started over with a different approach.
+started over with a different approach.  I worked through each challenge, taking
+small steps, until I reached the point where the game logic was working as expected.
+A lot of the logic requires the use of click handlers to listen for user
+interactions with buttons and game play on the Tic Tac Toe board.
+
+I learned a valuable lesson about 'circular references' which are caused by having
+two files that 'require' each other.  That issue caused a bit of rework for me,
+but it now makes sense.
 
 NEXT STEPS
 
@@ -56,6 +63,9 @@ New users should create an account by selecting the Sign Up button and completin
 the email and password fields.  After successfully signing up, select Sign In to
 authenticate.
 
+All modal fields for authentication will reset after use (they do not retain
+user info).
+
 3. PLAY
 
 1. Select New Game
@@ -63,9 +73,9 @@ authenticate.
 3. Select a different tile as player O.
 4. Continue until a player wins or the game is declared a tie (CAT game).
 
-4. VIEW STATS
+4. VIEW COMPLETED GAMES
 
-Player stats are displayed on the screen.
+User can view the number of games they have completed once they have authenticated.
 
 5. SIGN OUT
 
