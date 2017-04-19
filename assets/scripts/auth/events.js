@@ -37,7 +37,7 @@ const onSignOut = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault()
   // console.log('change password ran!')
-
+  // clear modal form here
   const data = getFormFields(this)
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
@@ -92,6 +92,15 @@ const createGame = function (event) {
   .catch(ui.createGameFailure)
 }
 
+// function clearIdForm () {
+//   document.getElementById('sign-upemail').reset()
+// }
+
+// function clearFormFields() {
+//   $('#sign-up').val('')
+//   $('#fieldIdTwo').val('')
+// }
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -100,6 +109,16 @@ const addHandlers = () => {
   $('#stats').on('click', onIndex)
   $('#game-search').on('submit', onGetGame)
   $('.create-game').on('click', createGame)
+  $('#sign-up').trigger('reset')
+  $('#signupModal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#changepwModal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#signinModal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
 }
 
 module.exports = {
