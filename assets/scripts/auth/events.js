@@ -64,23 +64,6 @@ const onGetGame = function (event) {
   }
 }
 
-// const onUpdateGame = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   const game = data.game
-//   api.updateGame()
-
-//   // if (game.id.length !== 0) {
-//   //   api.update(data)
-//   //   .then(api.onNoContentSuccess)
-//   //   .catch(api.onError)
-//   // } else {
-//   //   console.log('Please provide a game id!')
-//   // }
-// }
-
-// const data = '{}'
-
 const createGame = function (event) {
   game.startGame()
   event.preventDefault()
@@ -91,15 +74,6 @@ const createGame = function (event) {
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
 }
-
-// function clearIdForm () {
-//   document.getElementById('sign-upemail').reset()
-// }
-
-// function clearFormFields() {
-//   $('#sign-up').val('')
-//   $('#fieldIdTwo').val('')
-// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
