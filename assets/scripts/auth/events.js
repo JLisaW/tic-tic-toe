@@ -17,7 +17,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('signin ran')
+  // console.log('signin ran')
 
   const data = getFormFields(this)
   api.signIn(data)
@@ -27,7 +27,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('signout ran')
+  // console.log('signout ran')
 
   api.signOut()
   .then(ui.signOutSuccess)
@@ -36,7 +36,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(this)
   api.changePassword(data)
@@ -60,24 +60,24 @@ const onGetGame = function (event) {
       .then(ui.onSuccess)
       .catch(ui.onError)
   } else {
-    console.log('Please provide a game id!')
+    // console.log('Please provide a game id!')
   }
 }
 
-const onUpdateGame = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const game = data.game
-  api.updateGame()
+// const onUpdateGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   const game = data.game
+//   api.updateGame()
 
-  // if (game.id.length !== 0) {
-  //   api.update(data)
-  //   .then(api.onNoContentSuccess)
-  //   .catch(api.onError)
-  // } else {
-  //   console.log('Please provide a game id!')
-  // }
-}
+//   // if (game.id.length !== 0) {
+//   //   api.update(data)
+//   //   .then(api.onNoContentSuccess)
+//   //   .catch(api.onError)
+//   // } else {
+//   //   console.log('Please provide a game id!')
+//   // }
+// }
 
 // const data = '{}'
 

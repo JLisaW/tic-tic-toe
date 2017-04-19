@@ -55,7 +55,7 @@ td {
   width: 100px;
 }
 
-#newgame, #chpw, #signoff {
+#newgame, #chpw, #signoff, #stats {
   display:none;
 }
 
@@ -65,8 +65,8 @@ td {
 
 #signinSuccessAnnounce, #pwchangeSuccessAnnounce, #signupSuccessAnnounce,
 #signoutSuccessAnnounce {
-  color: #009900;
-  font-size: 24px;
+  color: #000000;
+  font-size: 18px;
   padding-top: 10px;
   text-align: center;
   display: none;
@@ -74,8 +74,8 @@ td {
 
 #signinFailureAnnounce, #pwchangeFailureAnnounce, #signupFailureAnnounce,
 #signoutFailureAnnounce {
-  color: #ff0000;
-  font-size: 24px;
+  color: #000000;
+  font-size: 18px;
   padding-top: 10px;
   text-align: center;
   display: none;
@@ -110,4 +110,8 @@ td {
   border-style: none;
   height: 32px;
   width: 140px;
+}
+
+.customized {
+  width: 300px;
 }

@@ -27,7 +27,7 @@ $(() => {
   $('form').on('submit', function (event) {
     event.preventDefault()
     const input = $('#emailInput').val()
-    console.log(input)
+    // console.log(input)
     $('#signinModal').modal('hide')
   })
 })
@@ -38,7 +38,7 @@ $(() => {
   $('form').on('submit', function (event) {
     event.preventDefault()
     const input = $('#emailInput').val()
-    console.log(input)
+    // console.log(input)
     $('#signupModal').modal('hide')
   })
 })
@@ -49,7 +49,7 @@ $(() => {
   $('form').on('submit', function (event) {
     event.preventDefault()
     const input = $('#emailInput').val()
-    console.log(input)
+    // console.log(input)
     $('#changepwModal').modal('hide')
   })
 })

@@ -3,16 +3,8 @@
 const config = require('../config')
 const store = require('../store')
 
-// const index = function () {
-//   console.log('api index running')
-//   return $.ajax({
-//     url: config.apiOrigin + '/games',
-//     method: 'GET'
-//   })
-// }
-
 const index = function () {
-  console.log('api index running')
+  // console.log('api index running')
   return $.ajax({
     url: config.apiOrigin + '/games?over=true',
     method: 'GET',
@@ -50,7 +42,7 @@ const signOut = () => {
 }
 
 const changePassword = (data) => {
-  console.log('data is', data)
+  // console.log('data is', data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -62,9 +54,7 @@ const changePassword = (data) => {
 }
 
 const createGame = () => {
-  // iterate through array and make all fields blank
-  // this is the request to the server
-  console.log('game created using the createGame function')
+  // console.log('game created using the createGame function')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -76,7 +66,7 @@ const createGame = () => {
 }
 
 const updateGame = (data) => {
-  console.log('game updated using the updateGame function', data)
+  // console.log('game updated using the updateGame function', data)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',

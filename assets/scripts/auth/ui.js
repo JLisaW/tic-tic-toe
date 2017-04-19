@@ -10,12 +10,13 @@ const store = require('../store')
 // $('#pwchangeFailureAnnounce').hide()
 // $('#signoutSuccessAnnounce').hide()
 // $('#signoutFailureAnnounce').hide()
+// $('#stats').hide()
 
 const onIndexSuccess = function (data) {
   // look through data returned from server
-  console.log('inside the onIndexSuccess in ui.js', data)
+  // console.log('inside the onIndexSuccess in ui.js', data)
   const gameCount = data.games.length
-  console.log('game count inside the onIndexSuccess function on ui.js', gameCount)
+  // console.log('game count inside the onIndexSuccess function on ui.js', gameCount)
   $('#statnum').html(gameCount)
   // calculate num completed games
 
@@ -34,7 +35,8 @@ const signUpSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
-  console.log(data)
+  $('#stats').hide()
+  // console.log(data)
 }
 
 const signUpFailure = (error) => {
@@ -46,11 +48,12 @@ const signUpFailure = (error) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').hide()
   console.error(error)
 }
 
 const signInSuccess = (data) => {
-  console.log('signin success ran.  data is:', data)
+  // console.log('signin success ran.  data is:', data)
   // now enable new game stuff
   // events.onIndex()
   $('#signoff').show()
@@ -66,6 +69,7 @@ const signInSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').show()
   store.user = data.user
 }
 
@@ -78,6 +82,7 @@ const signInFailure = (error) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').hide()
   console.error('signin failure ran.  error is:', error)
 }
 
@@ -96,8 +101,9 @@ const signOutSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').show()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').hide()
   document.getElementById('announce').innerHTML = ''
-  console.log('signout success and nothing was returned')
+  // console.log('signout success and nothing was returned')
   store.user = null
 }
 
@@ -110,6 +116,7 @@ const signOutFailure = (error) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').show()
+  $('#stats').hide()
   console.error(error)
 }
 
@@ -122,8 +129,9 @@ const changePasswordSuccess = (data) => {
   $('#pwchangeFailureAnnounce').hide()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').show()
   document.getElementById('announce').innerHTML = ''
-  console.log('password successfully changed')
+  // console.log('password successfully changed')
 }
 
 const changePasswordFailure = (error) => {
@@ -135,6 +143,7 @@ const changePasswordFailure = (error) => {
   $('#pwchangeFailureAnnounce').show()
   $('#signoutSuccessAnnounce').hide()
   $('#signoutFailureAnnounce').hide()
+  $('#stats').show()
   document.getElementById('announce').innerHTML = ''
   console.error(error)
 }
@@ -142,7 +151,7 @@ const changePasswordFailure = (error) => {
 const createGameSuccess = (data) => {
   // console.log('create game success ran.  data is:', data)
   store.game = data.game
-  console.log('you are in the createGameSuccess function on ui.js', store.game)
+  // console.log('you are in the createGameSuccess function on ui.js', store.game)
 }
 
 const createGameFailure = (error) => {
@@ -151,7 +160,7 @@ const createGameFailure = (error) => {
 
 const updateGameSuccess = (data) => {
   store.game = data.game
-  console.log('update game successful', data)
+  // console.log('update game successful', data)
 }
 
 const updateGameFailure = (error) => {
