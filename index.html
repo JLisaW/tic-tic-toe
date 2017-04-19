@@ -70,6 +70,8 @@
     Sign in</button></td>
   <td class="table-cells-for-buttons"><button id="signup" type="button" class="btn btn-default custom" data-toggle="modal" data-target="#signupModal">
   Sign Up</button></td>
+  <td class="table-cells-for-buttons"><button id="stats" type="button" class="btn btn-default custom" data-toggle="modal" data-target="#statsModal">
+  View Games Completed</button></td>
 </tr>
 
 <tr>
@@ -149,6 +151,31 @@
 <!--end signup modal-->
 
 <br><br>
+
+<!-- change stats Modal -->
+<div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="statsModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="statsModalLabel">Welcome!<br>  Your completed games are listed here!</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+<div id='stats'>You've completed: <span id='statnum'></span> games.</div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+<!--end stats modal-->
+
+
 
 <!-- change password Modal -->
 <div class="modal fade" id="changepwModal" tabindex="-1" role="dialog" aria-labelledby="changepwModalLabel" aria-hidden="true">

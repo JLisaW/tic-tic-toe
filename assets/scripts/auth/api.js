@@ -14,8 +14,11 @@ const store = require('../store')
 const index = function () {
   console.log('api index running')
   return $.ajax({
-    url: config.apiOrigin + '/games',
-    method: 'GET'
+    url: config.apiOrigin + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -72,12 +75,25 @@ const createGame = () => {
   })
 }
 
+const updateGame = (data) => {
+  console.log('game updated using the updateGame function', data)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   index,
-  createGame
+  createGame,
+  updateGame
 
 }

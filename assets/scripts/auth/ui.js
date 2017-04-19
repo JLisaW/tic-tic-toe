@@ -11,6 +11,18 @@ const store = require('../store')
 // $('#signoutSuccessAnnounce').hide()
 // $('#signoutFailureAnnounce').hide()
 
+const onIndexSuccess = function (data) {
+  // look through data returned from server
+  console.log('inside the onIndexSuccess in ui.js', data)
+  const gameCount = data.games.length
+  console.log('game count inside the onIndexSuccess function on ui.js', gameCount)
+  $('#statnum').html(gameCount)
+  // calculate num completed games
+
+  // update the statsnum span with resulting num of games
+  // using innerHTML
+}
+
 const signUpSuccess = (data) => {
   $('#signup').hide()
   $('#signin').show()
@@ -40,6 +52,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   console.log('signin success ran.  data is:', data)
   // now enable new game stuff
+  // events.onIndex()
   $('#signoff').show()
   $('#signup').hide()
   $('#signin').hide()
@@ -127,12 +140,21 @@ const changePasswordFailure = (error) => {
 }
 
 const createGameSuccess = (data) => {
-  console.log('create game success ran.  data is:', data)
+  // console.log('create game success ran.  data is:', data)
   store.game = data.game
-  console.log(store.game)
+  console.log('you are in the createGameSuccess function on ui.js', store.game)
 }
 
 const createGameFailure = (error) => {
+  return error
+}
+
+const updateGameSuccess = (data) => {
+  store.game = data.game
+  console.log('update game successful', data)
+}
+
+const updateGameFailure = (error) => {
   return error
 }
 
@@ -146,91 +168,8 @@ module.exports = {
   changePasswordFailure,
   changePasswordSuccess,
   createGameFailure,
-  createGameSuccess
+  createGameSuccess,
+  updateGameFailure,
+  updateGameSuccess,
+  onIndexSuccess
 }
-// 'use strict'
-//
-// const store = require('../store')
-// // const game = require('../game')
-//
-// // const pwchangesuccess = pwchangesuccess
-// // const pwchangefail = pwchangefail
-//
-// // const signUpSuccess = (data) => {
-// //   console.log(data)
-// // }
-// //
-// // const signUpFailure = (error) => {
-// //   console.error(error)
-// // }
-// //
-// // const signInSuccess = (data) => {
-// //   console.log('signin success ran.  data is:', data)
-// //   store.user = data.user
-// // }
-// //
-// // const signInFailure = (error) => {
-// //   console.error('signin failure ran.  error is:', error)
-// // }
-// //
-// // const signOutSuccess = (data) => {
-// //   console.log('signout success and nothing was returned')
-// //   store.user = null
-// // }
-//
-// const signOutFailure = (error) => {
-//   console.error(error)
-// }
-//
-// // const changePasswordSuccess = (data) => {
-// //   // document.getElementById(pwchok).style.display = 'block'
-// //   console.log('password successfully changed UI')
-// // }
-//
-// // const changePasswordFailure = (error) => {
-// //   game.togglePwfail()
-// //   // show alert from index.html that is hidden (yet to be written)
-// //   // which will need to be hidden unles/untill it is needed
-// //   console.error(error)
-// // }
-//
-// const createGameSuccess = (data) => {
-//   store.game = data.game
-//   console.log(store.game)
-// }
-//
-// const createGameFailure = (error) => {
-//   return error
-// }
-//
-// const updateGameSuccess = (data) => {
-//   store.game = data.game
-//   console.log('update game successful', data)
-// }
-//
-// const updateGameFailure = (error) => {
-//   return error
-// }
-//
-// // function toggle (a) {
-// //   if (document.getElementById(a).style.display === 'none') {
-// //     document.getElementById(a).style.display = 'block'
-// //   } else {
-// //     document.getElementById(a).style.display = 'none'
-// //   }
-// // }
-//
-// module.exports = {
-//   // signUpSuccess,
-//   // signUpFailure,
-//   // signInSuccess,
-//   // signInFailure,
-//   signOutFailure,
-//   // signOutSuccess,
-//   // changePasswordFailure,
-//   // changePasswordSuccess,
-//   createGameFailure,
-//   createGameSuccess,
-//   updateGameFailure,
-//   updateGameSuccess
-// }
